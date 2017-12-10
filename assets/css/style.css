@@ -1,0 +1,34 @@
+h1 {
+	 	background: purple;
+	 	color: #fff;
+	 	padding: 20px;
+	 	text-align: center;
+	 	/*border-bottom: 4px #000 solid;*/
+	 	margin-bottom: 50px;
+	 }
+
+.crystals {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.crystal {
+    border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0, 0.5);
+    transition: box-shadow 2s; transform: 3s;
+}
+
+.crystal:hover {
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0, 0.5);
+    transform: translate(5px, 50px);
+    cursor: pointer;
+    transition: box-shadow 2s transform 3s;
+}
+
+/*.img {*/
+    /*width: 0px;*/
+/*}*/
