@@ -12,19 +12,30 @@
   </head>
 
     <h1>Crystal Collector Game</h1>
-    
+
+    <h2>How To Play The Game:</h2>
+    <p>There are four crystals below. You will be given a random number at the start of the game. Each crystal's value is hidden until you click on it. By clicking on a crystal you will add a specific amount of number to match the random number given. You win the game by matching your total amount to the ramdom number, you lose the game if your total amount goes above the random number.
+        Each time when the game starts, the game will change the values of each crystal.</p>
+
     <body>
 
       <p id="result"></p>
 
       <div class="crystals">
-
         <div class="crystal"><img src="./assets/images/Dark_Water_Crystal.png" width="150" height="150"></div>
         <div class="crystal"><img src="./assets/images/Wind_Crystal.png" width="150" height="150"></div>
         <div class="crystal"><img src="./assets/images/LightsaberCrystal.png" width="150" height="150"></div>
         <div class="crystal"><img src="./assets/images/crystalbug_render.png" width="150" height="150"></div>
-
       </div>
+
+      <div class="row, container">
+        <h3 class="col-sm-3"></h3>
+        <h3 class="col-sm-3">Random Number:
+          <span id='targetScore'>0</span>
+        </h3>
+        <h3 class="col-sm-2 ">Your Score:
+          <span id='yourScore'>0</span>
+        </h3>
 
       <p id="previous"></p>
 

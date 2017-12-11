@@ -4,24 +4,24 @@
  var win = 0;
  var previous = 0;
 
- // var resetAndStart = function () {
+ var resetAndStart = function () {
  //
-    // $(".crystals").empty();
+    $(".crystals").empty();
 
-    // random_results = Math.floor(Math.random() *69 ) + 30;
+    random_results = Math.floor(Math.random() *69 ) + 30;
  //
  //
-    // $("#results").html('Random Result:' + random_results);
+    $("#result").html('Random Result:' + random_result);
  //
-    // for(var i = 0; i < 4; i++) {
+    for(var i = 0; i < 4; i++) {
  //
-       // var random = Math.floor(Math.random() * 11) + 1;
+       var random = Math.floor(Math.random() * 11) + 1;
  //
-       // var crystal = $("<div>");
-           // crystal.attr({
-              // "class": 'crystal',
-              // "data-random": random
-            // });
+       var crystal = $("<div>");
+           crystal.attr({
+              "class": 'crystal',
+              "data-random": random
+            });
             // crystal.css({
                 // "background-image":"url('" + images[i] +"')",
                // "background-size":"cover"
@@ -32,8 +32,10 @@
  //
     // }
 
-  $("#previous").html("Total Score: " + previous);
 
+  // });
+  $("#previous").html("Total Score: " + previous);
+}
 
 
 
@@ -47,11 +49,11 @@
       previous += num;
 
 
-      $("#previous").html("Total score: ", previous);
+      $("#previous").html("Total score: " + previous);
 
       // console.log(previous);
 
-      if(previous > random_results) {
+      if(previous > random_result) {
 
           lost++;
 
@@ -62,7 +64,7 @@
           resetAndStart();
         }
 
-      else if(previous === random_results) {
+      else if(previous === random_result) {
 
           win++;
 

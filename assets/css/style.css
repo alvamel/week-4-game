@@ -4,7 +4,7 @@ h1 {
 	 	padding: 20px;
 	 	text-align: center;
 	 	/*border-bottom: 4px #000 solid;*/
-	 	margin-bottom: 50px;
+	 	margin-bottom: 30px;
 	 }
 
 .crystals {
@@ -18,17 +18,13 @@ h1 {
     height: 150px;
     width: 150px;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0, 0.5);
-    transition: box-shadow 2s; transform: 3s;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 2s: transform: 3s;
 }
 
 .crystal:hover {
     box-shadow: 15px 15px 15px rgba(0, 0, 0, 0, 0.5);
-    transform: translate(5px, 50px);
+    transform: translate(10px, 10px);
     cursor: pointer;
-    transition: box-shadow 2s transform 3s;
+    transition: box-shadow 2s: transform 3s;
 }
-
-/*.img {*/
-    /*width: 0px;*/
-/*}*/
