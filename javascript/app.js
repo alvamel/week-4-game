@@ -1,84 +1,67 @@
 
- var random_results;
- var lost = 0;
- var win = 0;
- var previous = 0;
 
- var resetAndStart = function () {
- //
-    $(".crystals").empty();
+var yourScore = document.getElementById('yourScore');
 
-    random_results = Math.floor(Math.random() *69 ) + 30;
- //
- //
-    $("#result").html('Random Result:' + random_result);
- //
-    for(var i = 0; i < 4; i++) {
- //
-       var random = Math.floor(Math.random() * 11) + 1;
- //
-       var crystal = $("<div>");
-           crystal.attr({
-              "class": 'crystal',
-              "data-random": random
-            });
-            // crystal.css({
-                // "background-image":"url('" + images[i] +"')",
-               // "background-size":"cover"
- //
-            // });
- //
-       // $(".crystals").append(crystal);
- //
-    // }
+yourScore.innerHTML = 0;
+var totalScore = document.getElementById('totalScore');
+// var targetScore = document.getElementById('targetScore');
+targetScore.innerHTML = getRandomValue(10, 4);
 
-
-  // });
-  $("#previous").html("Total Score: " + previous);
+function addToScore(val) {
+  var numberToAdd = parseInt(val);
+  var currentScore = parseInt(yourScore.innerHTML);
+  yourScore.innerHTML = numberToAdd + currentScore;
 }
 
+var d = document.getElementById("d");
+// d.setAttribute("value", "5");
+
+var w = document.getElementById("w");
+// w.setAttribute("value", "10");
 
 
-  resetAndStart();
+var l = document.getElementById("l");
+// l.setAttribute("value", "15");
 
 
-  $(document).on('click', ".crystal", function () {
+var c = document.getElementById("c");
+// c.setAttribute("value", "20");
 
-      var num = parseInt($(this).attr('data-random'));
+// event listener
+d.addEventListener('click', function() {
+  addToScore(this.value);
+  checkPlayerScore();
+});
 
-      previous += num;
+w.addEventListener('click', function() {
+  addToScore(this.value);
+  checkPlayerScore();
+});
 
+l.addEventListener('click', function() {
+  addToScore(this.value);
+  checkPlayerScore();
+});
 
-      $("#previous").html("Total score: " + previous);
+c.addEventListener('click', function() {
+  addToScore(this.value);
+  checkPlayerScore();
+});
 
-      // console.log(previous);
+// console.log (sum);
+function getRandomValue (a, b){
+  return Math.floor((Math.random() * a) + b);
+}
 
-      if(previous > random_result) {
+function checkPlayerScore() {
+  //yourScore, targetScore (parseFloat() is for decimals)
+  var playerInt = parseInt(yourScore.innerHTML);
+  var targetInt = parseInt(targetScore.innerHTML);
+  if (playerInt === targetInt) {
+      alert('You win!');
+  } else if (playerInt > targetInt) {
+    alert('You lose!');
+  }
+}
 
-          lost++;
-
-          $("#lost").html("You lost: " + lost);
-
-          previous = 0;
-
-          resetAndStart();
-        }
-
-      else if(previous === random_result) {
-
-          win++;
-
-          $("#win").html("You win: " + win);
-
-          previous = 0;
-
-          resetAndStart();
-        }
-    });
-
-
-
-//       // else if(previous === random_result) {
-//          // win++;
-//          // $("#win").html(win);
-//
+// console.log(getRandomValue(10, 4));
